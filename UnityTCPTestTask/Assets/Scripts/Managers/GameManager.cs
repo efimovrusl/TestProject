@@ -1,4 +1,6 @@
+using System.Linq;
 using Factories;
+using Json;
 using UnityEngine;
 using Zenject;
 
@@ -14,8 +16,17 @@ public class GameManager : MonoBehaviour
     {
         _uiManager.OnLoadFileButtonClick += jsonPath =>
         {
-            string jsonString = _tcpManager.ReadJsonWithTcpReader( jsonPath );
-            Debug.Log( jsonPath );
+            _cuboidFactory.DestroyInstances();
+            
+            string jsonFile = _tcpManager.ReadJsonWithTcpReader( jsonPath );
+            var objects = JsonConverter.GetTransformsFromJson( jsonFile );
+            if ( objects != null && objects.Count != 0 )
+            {
+                foreach ( var obj in objects )
+                {
+                    _cuboidFactory.GetInstance( obj.p, obj.r, obj.s );
+                }
+            }
         };
     }
 }
