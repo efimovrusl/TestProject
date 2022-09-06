@@ -9,7 +9,7 @@ async def handle(reader: StreamReader, writer: StreamWriter):
     addr = writer.get_extra_info('peername')
     print(f"Connected with {addr!r}")
     await reader.read(struct.calcsize('c'))
-    data = await reader.read(4096)
+    data = await reader.read(512000)
     jsonFilePath = data.decode('utf8')
     
     jsonString = ""

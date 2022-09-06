@@ -25,7 +25,7 @@ public class TcpManager : MonoBehaviour
 
         // read sample
         BinaryReader reader = new BinaryReader( stream );
-        byte[] response = reader.ReadBytes( 4096 );
+        byte[] response = reader.ReadBytes( 512000 );
 
         return System.Text.Encoding.UTF8.GetString( response );
     }

@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="base" style="width: 100%; height: 100%;">
-        <ui:VisualElement name="topPanel" style="width: 100%; height: 15%; background-color: rgb(70, 70, 70); position: absolute; justify-content: center; align-items: center;">
+        <ui:VisualElement name="topPanel" style="width: 100%; height: 15%; background-color: rgba(70, 70, 70, 0.53); position: absolute; justify-content: center; align-items: center;">
             <ui:TextField picking-mode="Ignore" value="filler text" text="path/to/json/file" name="pathToJsonTextField" style="position: absolute; left: 5%; right: 35%;" />
             <ui:Button text="Load file" display-tooltip-when-elided="true" name="loadFileButton" style="position: absolute; right: 5%; left: 70%;" />
         </ui:VisualElement>
